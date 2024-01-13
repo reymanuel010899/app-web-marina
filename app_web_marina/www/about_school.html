@@ -1,0 +1,63 @@
+{% extends "app_web_marina/www/templete/base.html" %}
+
+
+{% block content %}
+{% set escuela = frappe.get_doc("Escuela", student.escuela ) %}
+    <!-- /nav menu -->
+<div class="flex justify-center">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+      </svg>
+      </div>
+
+      <h1 class="text-3xl text-center my-4 animate__animated animate__bounceInUp animate__delay-1s" style="font-family: 'Courier New', Courier, monospace;" style="font-family: 'Courier New', Courier, monospace;">Sobre la Escuela</h1>
+      <div class="flex justify-center">
+<img src=" {{escuela.portada}}" class="w-2/6 rounded-lg shadow-xl hover:shadow-inner animate__animated animate__backInUp animate__delay-2s" alt="">
+</div>
+<div class="mx-20 text-justify mt-10 animate__animated animate__bounceInUp animate__delay-3s">
+<p style="font-family: 'Courier New', Courier, monospace;">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas mi nec metus malesuada, non ultricies lorem convallis. Sed placerat, sem id consectetur ultrices, mauris nunc lacinia turpis, vel accumsan mauris neque ac est. In dictum augue a maximus lobortis. Donec vulputate dolor ut leo placerat, sed vehicula felis luctus. Fusce felis magna, pretium non dui consequat, ultricies laoreet justo. Etiam varius magna non neque mollis porttitor a eu lectus. Vivamus eleifend massa eu eros tincidunt, non efficitur lorem rhoncus. Phasellus sit amet ligula luctus, facilisis erat a, lobortis lorem. Cras sagittis dui id lacus aliquam lacinia.
+</p>
+<br>
+<p style="font-family: 'Courier New', Courier, monospace;">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas mi nec metus malesuada, non ultricies lorem convallis. Sed placerat, sem id consectetur ultrices, mauris nunc lacinia turpis, vel accumsan mauris neque ac est. In dictum augue a maximus lobortis. Donec vulputate dolor ut leo placerat, sed vehicula felis luctus. Fusce felis magna, pretium non dui consequat, ultricies laoreet justo. Etiam varius magna non neque mollis porttitor a eu lectus. Vivamus eleifend massa eu eros tincidunt, non efficitur lorem rhoncus. Phasellus sit amet ligula luctus, facilisis erat a, lobortis lorem. Cras sagittis dui id lacus aliquam lacinia.
+    </p>
+
+</div>
+<!-- columnas de las fotos -->
+  <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 animate__animated animate__flipInX animate__delay-3s">
+   <!-- foto 1 -->
+    <div class="flex justify-center">
+  <img src="https://images.pexels.com/photos/2781814/pexels-photo-2781814.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="w-2/3 rounded-lg shadow-xl hover:shadow-inner" alt="">
+    </div>
+    <!-- fin foto 1 -->
+    <!-- foto 2 -->
+    <div class="flex justify-center">  
+      <img src="https://images.pexels.com/photos/2781814/pexels-photo-2781814.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="w-2/3 rounded-lg shadow-xl hover:shadow-inner" alt="">
+    </div>
+    <!-- fin de foto 2 -->
+    <!-- foto 3 -->
+    <div class="flex justify-center">
+        <img src="https://images.pexels.com/photos/2781814/pexels-photo-2781814.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="w-2/3 rounded-lg shadow-xl hover:shadow-inner" alt="">
+      </div>
+    <!-- fin de foto 3 -->
+</div>
+
+<svg class="" width="100%" height="50%" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" overflow="auto" shape-rendering="auto" fill="#ffffff">
+  <defs>
+   <path id="wavepath" d="M 0 2000 0 500 Q 138 430 276 500 t 276 0 276 0 276 0 276 0 276 0  v1000 z" />
+   <path id="motionpath" d="M -552 0 0 0" /> 
+  </defs>
+  <g >
+   <use xlink:href="#wavepath" y="125" fill="#1D4ED8">
+   <animateMotion
+    dur="5s"
+    repeatCount="indefinite">
+    <mpath xlink:href="#motionpath" />
+   </animateMotion>
+   </use>
+  </g>
+</svg>
+
+  
+{% endblock %}

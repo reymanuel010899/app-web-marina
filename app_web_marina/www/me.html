@@ -1,0 +1,209 @@
+{% extends "app_web_marina/www/templete/base.html" %}
+
+
+{% block content %}
+    <!-- drawer init and toggle -->
+  
+  
+    <div class="mb-10">
+        <h1 class="mt-3 text-center text-3xl" style="font-family: 'Courier New', Courier, monospace;">Carrera</h1>
+        <h1 class="text-center text-4xl" style="font-family: 'Courier New', Courier, monospace;">{{student.carrera}} </h1>
+    </div>
+    <!-- grid  -->
+    <div class="container mx-auto mt-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-2">
+            <!-- nombre -->
+            <div class="">
+                <form action="">
+                    <div class="relative z-0 w-full mb-6 group md:pr-4" id="estilo" style="border-bottom: 2px solid black; width: 90%;">
+                        <input type="text" name="floating_nombre" id="floating_nombre" value="{{student.nombre}} " readonly
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_siglas"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre</label>
+                    </div>
+                </form>
+            </div>
+            <!-- /apellido -->
+            <!-- apellido -->
+            <div class="">
+                <form action="">
+                    <div class="relative z-0 w-full mb-6 group md:pl-2" style="border-bottom: 2px solid black;">
+                        <input type="text" name="floating_apellido" id="floating_apellido" value="{{student.apellido}} " readonly
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_apellido"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Apellido</label>
+                    </div>
+                </form>
+            </div>
+            <!-- fin de apellido -->
+            <!-- fecha de nacimiento -->
+            <div class="">
+                <form action="">
+                    <div class="relative z-0 w-full mb-6 group md:pr-4" style="border-bottom: 2px solid black; width: 90%;">
+                        <input type="text" name="floating_fecha" id="floating_fecha" value="{{student.fecha}} " readonly
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_fecha"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Fecha</label>
+                    </div>
+                </form>
+            </div>
+            <!-- fin fecha de nacimiento -->
+            <!-- nacionalidad -->
+            <div class="">
+                <form action="">
+                    <div class="relative z-0 w-full mb-6 group md:pl-2" style="border-bottom: 2px solid black;">
+                        <input type="text" name="floating_nacionalidad" id="floating_fecha" value=" {{student.nacionalidad}}" readonly
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_nacionalidad"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nacionalidad</label>
+                    </div>
+                </form>
+            </div>
+            <!-- fin de nacionalidad -->
+            <!-- Estado Civil -->
+            <div>
+                <form action="">
+                    <div class="relative z-0 w-full mb-6 group md:pr-4" style="border-bottom: 2px solid black; width: 90%;">
+                        <input type="text" name="floating_civil" id="floating_civil" value="{{student.estado}} " readonly
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_civil"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Estado
+                            Civil</label>
+                    </div>
+                </form>
+
+            </div>
+            <!-- /estado civil -->
+            <!-- cedula -->
+            <div>
+                <form action="">
+                    <div class="relative z-0 w-full mb-6 group md:pl-2" style="border-bottom: 2px solid black;">
+                        <input type="text" name="floating_cedula" id="floating_cedula" value="{{student.cedula_o_pasaporte}} " readonly
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_cedula"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">No.
+                            de Cédula/ Pasaporte</label>
+                    </div>
+                </form>
+            </div>
+            <!-- /cedula -->
+            <!-- celular -->
+            <div>
+                <form action="">
+                    <div class="relative z-0 w-full mb-6 group md:pr-4" style="border-bottom: 2px solid black; width: 90%;">
+                        <input type="tel" name="floating_celular"
+                            id="floating_celular" value="{{student.celular}} " readonly
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_celular"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Celular
+                            (ejemplo: 809-301-2103)</label>
+                    </div>
+                </form>
+            </div>
+            <!-- /celular -->
+            <!-- tipo de sangre -->
+
+            <div class="relative z-0 w-full mb-6 group md:pl-2" style="border-bottom: 2px solid black;">
+                
+                    <input type="tel" name="floating_celular"
+                            id="floating_celular" value="{{student.tipo_sambre}} " readonly
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                    <label for="floating_civil"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Tipo
+                            de sangre</label>
+               
+            </div>
+
+            <!-- /tipo de sangre -->
+            <!-- dirección -->
+            <div>
+                <form action="">
+                    <div class="relative z-0 w-full mb-6 group md:pr-4" style="border-bottom: 2px solid black; width: 90%;">
+                        <input type="text" name="floating_direccion" id="floating_direccion" value="{{student.direcion}} "
+                            readonly
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_cedula"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Dirección</label>
+                    </div>
+                </form>
+            </div>
+            <!-- /dirección -->
+            <!-- rango -->
+            <div>
+                <form action="">
+                    <div class="relative z-0 w-full mb-6 group md:pl-2" style="border-bottom: 2px solid black;">
+                        <input type="text" name="floating_rango" id="floating_rango" value="{{student.rango}} " readonly
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_rango"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Rango</label>
+                    </div>
+                </form>
+            </div>
+            <!-- /rango -->
+            <!-- fecha de ingreso -->
+            <div>
+                <form action="">
+                    <div class="relative z-0 w-full mb-6 group md:pr-4" style="border-bottom: 2px solid black; width: 90%;">
+                        <input type="text" name="floating_fechaingreso" value="{{student.fecha_ingreso}} " readonly id="floating_fechaingreso"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_fechaingreso"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Fecha
+                            de ingreso</label>
+                    </div>
+                </form>
+            </div>
+            <!-- /fecha de ingreso -->
+            <!-- ultimo ascenso -->
+            <form action="">
+                <div class="relative z-0 w-full mb-6 group md:pl-2" style="border-bottom: 2px solid black;">
+                    <input type="text" name="floating_fechaascenso" value="{{student.old_ascenso}} " id="floating_fechaascenso" readonly
+                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" " required />
+                    <label for="floating_fechaascenso"
+                        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Ultimo
+                        Ascenso</label>
+                </div>
+            </form>
+            <!-- /ultimo ascenso -->
+            <!-- Institución -->
+            <div>
+                <form action="">
+                    <div class="relative z-0 w-full mb-6 group md:pr-4" style="border-bottom: 2px solid black; width: 90%;">
+                        <input type="text" name="floating_institucion" id="floating_institucion" value="{{student.institucion}} " readonly
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_institucion"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Institución</label>
+                    </div>
+                </form>
+            </div>
+            <!-- /Institución -->
+            <!-- correo -->
+            <div>
+                <form action="">
+                    <div class="relative z-0 w-full mb-6 group md:pl-2" style="border-bottom: 2px solid rgb(65, 62, 62);">
+                        <input type="email" name="floating_email" id="floating_email" value="{{student.gmail}} "
+                            readonly
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_email"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Correo
+                            Electrónico</label>
+                    </div>
+                </form>
+            </div>
+            <!-- /correo -->
+        </div>
+
+{% endblock %}

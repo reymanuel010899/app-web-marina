@@ -1,0 +1,82 @@
+{% extends "app_web_marina/www/templete/base.html" %}
+
+
+{% block content %}
+
+    <!-- /nav menu -->
+
+    <h1 class="text-center text-3xl mb-6">{{student.carrera}} </h1>
+<!-- tabla -->
+
+<div class="flex justify-center" style="margin: 20px;">
+    <table class="border-collapse table-auto border border-slate-400 mb-3" style="width: 100%;">
+        <thead class="border border-slate-400 bg-blue-700 text-white">
+          <tr>
+            <th class="px-4">Semestre</th>
+            <th class="px-4">Código asignatura</th>
+            <th class="px-4">Asignatura</th>
+            <th class="px-4">Créditos</th>
+            <th class="px-4">Profesor</th>
+            <th class="px-4">Calificación</th>
+          </tr>
+        </thead>
+        <tbody>
+       
+            {% for semestre in semestres %}
+            <tr class="border-b">
+                <td class="pl-2 pt-3">Semestre {{semestre.semester}} </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+           {% set semestr = frappe.get_doc("Semestre", semestre.name) %}
+           {% set total_notas = 0 %}
+           {% set cantidad_materias = 0 %}
+           {% for materia in semestr.materia_item %}
+                {% set mat = frappe.get_doc("Materias", materia.materia_name ) %}
+                <tr class="border-b bg-slate-100 hover:bg-slate-300">
+                <td class="text-center border-b border-slate-200">{{semestre.semester}} </td>  
+                <td class="px-4"> {{materia.name}}</td>
+                <td class="px-4">{{materia.materia_name}} </td>
+                <td class="text-center">{{mat.credito}} </td>
+             
+                {% if mat.profesor %}
+                     {% set profesor = frappe.get_doc("Employee", mat.profesor) %}
+                {% else %}
+                    {% set profesor = "" %}
+                {% endif %}
+                <td class="px-4"> {% if mat.profesor %}   {{profesor.employee_name}} {% else %} {{profesor}} {% endif %} </td>
+                {% set nota = frappe.get_list("Notas", filters = {"estudiante": student.name, "materia": mat.name}, fields=["estudiante","materia", "nota"],   ignore_permissions = True) %}
+                {% for b in nota %}
+                {% set total_notas = total_notas + b.nota %}
+                {% set cantidad_materias = cantidad_materias + 1 %}
+                {% if b.materia == mat.name %}
+                  {% if b.nota >= 70 %}
+                    <td class="px-4" style="background-color: rgb(45, 45, 255); color: aliceblue;"> {{b.nota}} </td>
+                  {% else %}
+                  <td class="px-4" style="background-color: rgb(255, 52, 45) ; color: aliceblue;"> {{b.nota}} </td>
+                 {% endif %}
+                {% endif %}
+                {% endfor %} 
+                </td>  
+      
+                </tr>
+          {% endfor %}
+          <th class="text-right" colspan="1">
+     
+            <b>  </b>
+          </th>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+<div class="flex justify-center space-x-40 mb-3">
+    <h1 style="margin-left: 0%;">Promedio Total: 0</h1>
+    {% set querry =  frappe.db.sql("SELECT SUM(credito) FROM `tabMaterias` WHERE carrera = '{{student.carrera}}' GROUP BY carrera", as_dict=True) %}
+    <h2>Cantidad de Creditos: {{querry.credito or 0 }} </h2>
+  </div>
+{% endblock content %}
+

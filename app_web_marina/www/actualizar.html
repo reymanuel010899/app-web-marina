@@ -1,0 +1,212 @@
+{% extends "app_web_marina/www/templete/base.html" %}
+
+
+{% block content %}
+    <div class="mb-10">
+        <h1 class="mt-3 text-center text-3xl">Carrera</h1>
+       
+        <h1 class="text-center text-4xl"></h1>
+    </div>
+    <!-- grid  -->
+    
+    <div class="container mx-auto mt-5">
+        <form method="POST" action="">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-2">
+         
+            <!-- nombre -->
+            <div class="" style="border-bottom: 2px solid black; width: 90%;">
+               
+                    <div class="relative z-0 w-full mb-6 group md:pr-4" >
+                        <input type="text"  name="nombre" id="floating_nombre" value=""
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_siglas"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre</label>
+                    </div>
+            
+            </div>
+            <!-- /apellido -->
+            <!-- apellido -->
+            <div class="" style="border-bottom: 2px solid black;">
+    
+                    <div class="relative z-0 w-full mb-6 group md:pl-2">
+                        <input type="text"  name="apellido" id="floating_apellido" value=""
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_apellido"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Apellido</label>
+                    </div>
+                
+            </div>
+            <!-- fin de apellido -->
+            <!-- fecha de nacimiento -->
+            <div class="" style="border-bottom:  2px solid black; width: 90%;">
+                
+                    <div class="relative z-0 w-full mb-6 group md:pr-4">
+                        <input type="date" name="nacimiento"  id="floating_fecha" value=""
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_fecha"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Fecha</label>
+                    </div>
+        
+            </div>
+            <!-- fin fecha de nacimiento -->
+    
+            <!-- Estado Civil -->
+            <div style="border-bottom: 2px solid black;">
+            
+                    <div class="relative z-0 w-full mb-6 group md:pr-4">
+                        <input type="text" name="estado-civil" id="floating_civil" value=""
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_civil"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Estado
+                            Civil</label>
+                    </div>
+    
+
+            </div>
+            <!-- /estado civil -->
+            <!-- cedula -->
+            <div style="border-bottom: 2px solid black;  width: 90%">
+            
+                    <div class="relative z-0 w-full mb-6 group md:pl-2">
+                        <input type="text"  Name="cedula" id="floating_cedula" value=""
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_cedula"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">No.
+                            de Cédula/ Pasaporte</label>
+                    </div>
+    
+            </div>
+            <!-- /cedula -->
+            <!-- celular -->
+            <div style="border-bottom: 2px solid black;">
+                
+                    <div class="relative z-0 w-full mb-6 group md:pr-4">
+                        <input type="tel" Name="celular" 
+                            id="floating_celular" value=""
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_celular"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Celular
+                            (ejemplo: 809-301-2103)</label>
+                    </div>
+            </div>
+            <!-- /celular -->
+            <!-- tipo de sangre -->
+            <div  style="border-bottom: 2px solid black;  width: 90%">
+            
+                <div class="relative z-0 w-full mb-6 group md:pl-2">
+                    <input type="email" name="correo" id="floating_email" value=""
+                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" " required />
+                    <label for="floating_email"
+                        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Correo
+                        Electrónico</label>
+                </div>
+            
+        </div>
+
+            <!-- /tipo de sangre -->
+            <!-- dirección -->
+            <div style="border-bottom: 2px solid black;">
+        
+                    <div class="relative z-0 w-full mb-6 group md:pr-4">
+                        <input type="text" name="direcion" id="floating_direccion" value=""
+                            
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_cedula"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Dirección</label>
+                    </div>
+        
+            </div>
+            <!-- /dirección -->
+            <!-- rango -->
+            <div style="border-bottom: 2px solid black;  width: 90%">
+        
+                    <div>
+                        <input type="text" name="rango" id="floating_rango" value=""
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder="rango" required />
+                        <label for="floating_rango" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"> </label>
+                    </div>
+
+            </div>
+            <!-- /rango -->
+            <!-- fecha de ingreso -->
+            <div style="border-bottom: 2px solid black;">
+            
+                    <div class="relative z-0 w-full mb-6 group md:pr-4">
+                        <input type="date" name="ingreso" value="" id="floating_fechaingreso"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_fechaingreso"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Fecha
+                            de ingreso</label>
+                    </div>
+                
+            </div>
+            <!-- /fecha de ingreso -->
+            <!-- ultimo ascenso -->
+            <div style="border-bottom: 2px solid black;  width: 90%">
+                <div class="relative z-0 w-full mb-6 group md:pl-2"  >
+                    <input type="date" name="ultimo" value="" id="floating_fechaascenso"
+                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" " required />
+                    <label for="floating_fechaascenso"
+                        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Ultimo
+                        Ascenso</label>
+                </div>
+            </div>
+            <!-- /ultimo ascenso -->
+            <!-- Institución -->
+            <div style="border-bottom: 2px solid black;">
+                
+                    <div class="relative z-0 w-full mb-6 group md:pr-4">
+                        <input type="text" name="institucion" id="floating_institucion" value="" 
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_institucion"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Institución</label>
+                    </div>
+        
+            </div>
+            <!-- /Institución -->
+            <!-- correo -->
+            <div class="relative z-0 w-full mb-6 group md:pl-2" style="border-bottom:  2px solid black;  width: 90%"> 
+                <label for="Provincia" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Tipo de Sangre</label>
+                <select id="Provincia" name="samgre" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" required>
+                    <option value="" disabled>Selecciona una opción</option>
+                    <option value="A positivo (A+)">A positivo (A+)</option>
+                    <option value="A negativo (A-)">A negativo (A-)</option>
+                    <option value="B positivo (B+)">B positivo (B+)</option>
+                    <option value="B negativo (B-)">B negativo (B-)</option>
+                    <option value="AB positivo (AB+)">AB positivo (AB+)</option>
+                    <option value="AB negativo (AB-)">AB negativo (AB-)</option>
+                    <option value="O positivo (O+)">O positivo (O+)</option>
+                    <option value="O negativo (O-)">O negativo (O-)</option>
+                </select>
+            </div>
+            <!-- /correo -->
+             <!-- nacionalidad -->
+             <div class="relative z-0 w-full mb-6 group md:pl-2" style="border-bottom:  2px solid black; "> 
+                <label for="Provincia" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nacionalidad</label>
+                <select id="Provincia" name="nacionalidad" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" required>
+                    <option value="" disabled>Selecciona una opción</option>
+                    <option value="Republica Dominicana">Republica Dominicana</option>
+                    <option value="Puerto Rico">Puerto Rico</option>
+                    <option value="Haiti">Haiti</option>
+                    <option value="Venezuelaa">Venezuelaa</option>
+                    <option value="Colombia">Colombia</option>
+                </select>
+            </div>
+            <!-- fin de nacionalidad -->
+        
+        </div>
+        <button style="background-color: rgb(30, 58, 138); width: 100%; padding: 10px; margin-top: 20px; color: aliceblue;" type="submit">Save</button>
+        </form>
+{% endblock %}

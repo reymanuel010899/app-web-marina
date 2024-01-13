@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!-- Built on Frappe. https://frappeframework.com/ -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="frappe">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
+	<script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: { 
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+
+<style>
+  .custom-shape-divider-bottom-1699538527 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      transform: rotate(180deg);
+  }
+  
+  .custom-shape-divider-bottom-1699538527 svg {
+      position: relative;
+      display: block;
+      width: calc(125% + 1.3px);
+      height: 239px;
+  }
+  
+  .custom-shape-divider-bottom-1699538527 .shape-fill {
+      fill: rgb(30 58 138);;
+  }
+  
+  /** For mobile devices **/
+  @media (max-width: 767px) {
+      .custom-shape-divider-bottom-1699538527 svg {
+          width: calc(127% + 1.3px);
+          height: 73px;
+      }
+  }
+  
+  </style>
+
+
+	<title>{% block title %}{{ title | striptags }}{% endblock %}</title>
+
+	<link rel="canonical" href="{{ canonical }}">
+
+	{%- block head -%}
+		{% include "templates/includes/head.html" %}
+	{%- endblock -%}
+
+	{%- block head_include %}
+		{{ head_include or "" }}
+	{% endblock -%}
+
+
+	<script>
+		window.frappe = {};
+		frappe.ready_events = [];
+		frappe.ready = function(fn) {
+			frappe.ready_events.push(fn);
+		}
+		window.dev_server = {{ dev_server }};
+		window.socketio_port = {{ (frappe.socketio_port or 'null') }};
+		window.show_language_picker = {{ show_language_picker or 'false' }};
+	</script>
+ 
+</head>
+<body frappe-session-status="{{ 'logged-in' if frappe.session.user != 'Guest' else 'logged-out'}}" data-path="{{ path | e }}" {%- if template and template.endswith('.md') %} frappe-content-type="markdown" {%- endif %} class="{{ body_class or ''}}">
+	<div style="margin-top: 20px !important;" class="text-center mt-8 lg:mr-6 flex justify-center lg:justify-end">
+        <h1 class="text-2xl font-bold mt-3" style="margin-right: 39%; font-family: 'Courier New', Courier, monospace;">{{student.escuela}} </h1>
+        <button id="sidebarCollapse"
+            style="background-color: rgb(30, 58, 138)" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+            type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example"
+            aria-controls="drawer-example">
+            Menú
+        </button>
+    </div>
+{% set current_us = frappe.get_doc("User", student.user) %}
+	  <!-- drawer component -->
+	  <div id="drawer-example"
+	  class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-blue-900 w-80 dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-label">
+	  <div class="flex justify-center">
+		  <img class="w-20 h-20 mt-4 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
+			  src="{{current_us.user_image}}"
+			  alt="Bordered avatar">
+	  </div>
+	  <h1 class="text-2xl font-bold mt-3 text-white text-center">{{student.matricula}} </h1>
+	  <h1 class="text-2xl text-white text-center">{{current_us.username}} </h1>
+
+	  <button type="button" data-drawer-hide="drawer-example" aria-controls="drawer-example"
+		  class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white">
+		  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+			  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+				  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+		  </svg>
+		  <span class="sr-only">Close menu</span>
+	  </button>
+
+	  <!-- nav menu -->
+	  <nav>
+		
+		  <a class="flex items-center px-4 py-2 text-white border-b-2 border-white mt-6 hover:bg-slate-300 hover:text-gray-900 hover:rounded-l" href="/">
+			  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+				  stroke="currentColor" class="w-5 h-5">
+				  <path stroke-linecap="round" stroke-linejoin="round"
+					  d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+			  </svg>
+			  <span class="mx-4 font-medium text-xs" style="font-family: 'Courier New', Courier, monospace;">Información Personal</span>
+		  </a>
+		  <a class="flex items-center px-4 py-2 text-white border-b-2 border-white mt-6 hover:bg-slate-300 hover:text-gray-900 hover:rounded-l" href="avances_academicos">
+			  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+				  stroke="currentColor" class="w-5 h-5">
+				  <path stroke-linecap="round" stroke-linejoin="round"
+					  d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+			  </svg>
+			  <span class="mx-4 font-medium text-xs" style="font-family: 'Courier New', Courier, monospace;">Avances académicos</span>
+		  </a>
+
+		  <a class="flex items-center px-4 py-2 text-white border-b-2 border-white mt-6 hover:bg-slate-300 hover:text-gray-900 hover:rounded-l" href=""  target="_blank" >
+			  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+				  stroke="currentColor" class="w-5 h-5">
+				  <path stroke-linecap="round" stroke-linejoin="round"
+					  d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+			  </svg>
+			  <span class="mx-4 font-medium text-xs" style="font-family: 'Courier New', Courier, monospace;">Pensum académico</span>
+		  </a>
+
+		  <a class="flex items-center px-4 py-2 text-white border-b-2 border-white mt-6 hover:bg-slate-300 hover:text-gray-900 hover:rounded-l" href="actualizar">
+			  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+				  stroke="currentColor" class="w-5 h-5">
+				  <path stroke-linecap="round" stroke-linejoin="round"
+					  d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
+			  </svg>
+
+			  <span class="mx-4 font-medium text-xs" style="font-family: 'Courier New', Courier, monospace;">Actualizar Datos</span>
+		  </a>
+
+		  <a class="flex items-center px-4 py-2 text-white border-b-2 border-white mt-6 hover:bg-slate-300 hover:text-gray-900 hover:rounded-l" href="about_school">
+			  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+				  stroke="currentColor" class="w-5 h-5">
+				  <path stroke-linecap="round" stroke-linejoin="round"
+					  d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+			  </svg>
+			  <span class="mx-4 font-medium text-xs" style="font-family: 'Courier New', Courier, monospace;">Sobre Escuela</span>
+		  </a>
+
+		  <a id="miElemento" class="flex items-center px-4 py-2 text-white border-b-2 border-white mt-6 hover:bg-slate-300 hover:text-gray-900 hover:rounded-l" href="/?cmd=web_logout">
+			  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+				  stroke="currentColor" class="w-5 h-5">
+				  <path stroke-linecap="round" stroke-linejoin="round"
+					  d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+			  </svg>
+			  <span class="mx-4 font-medium text-xs" style="font-family: 'Courier New', Courier, monospace;">Salir</span>
+		  </a>
+  
+	  </nav>
+	  <!-- /nav menu -->
+  </div>
+	{% block content %}
+	
+		{{ content }}
+	{% endblock %}
+
+	
+	{% block base_scripts %}
+	<!-- js should be loaded in body! -->
+	<script>
+		frappe.boot = {{ boot }}
+		// for backward compatibility of some libs
+		frappe.sys_defaults = frappe.boot.sysdefaults;
+	</script>
+	
+	   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+	   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+	   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+	   <script src="https://kit.fontawesome.com/62ea397d3a.js" crossorigin="anonymous"></script>
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">   </script>
+
+
+
+
+
+
+	   <Script>
+		let content = document.getElementById("content")
+		let sidebar = document.querySelector("#sidebar")
+		content.style.marginLeft = "250PX"
+	  
+		$(document).ready(function () { $('#sidebarCollapse').on('click', function () { $('#sidebar').toggleClass('active'); }); });
+		$(document).ready(function () { $('#close-menu').on('click', function () { $('#sidebar').toggleClass('active'); }); });
+	  
+		document.querySelector("#sidebarCollapse").addEventListener("click", (even) => {
+			console.log("click me")
+		  let content = document.getElementById("content")
+	  
+		  if (sidebar.classList.contains("active")) {
+			content.style.marginLeft = "250PX"
+	  
+		  } else {
+			content.style.marginLeft = "0PX"
+		  }
+		})
+		document.querySelector("#close-menu").addEventListener("click", (even) => {
+		  let content = document.getElementById("content")
+	  
+		  if (sidebar.classList.contains("active")) {
+			content.style.marginLeft = "250PX"
+	  
+		  } else {
+			content.style.marginLeft = "0PX"
+		  }
+		})
+	  </Script>
+
+	{{ include_script('frappe-web.bundle.js') }}
+	{% endblock %}
+
+	{%- for link in web_include_js %}
+	{{ include_script(link) }}
+	{%- endfor -%}
+
+	
+	<!-- csrf_token -->
+	{%- block body_include %}{{ body_include or "" }}{% endblock -%}
+</body>
+</html>
