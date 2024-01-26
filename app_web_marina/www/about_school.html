@@ -3,6 +3,7 @@
 
 {% block content %}
 {% set escuela = frappe.get_doc("Escuela", student.escuela ) %}
+
     <!-- /nav menu -->
 <div class="flex justify-center">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
@@ -12,7 +13,7 @@
 
       <h1 class="text-3xl text-center my-4 animate__animated animate__bounceInUp animate__delay-1s" style="font-family: 'Courier New', Courier, monospace;" style="font-family: 'Courier New', Courier, monospace;">Sobre la Escuela</h1>
       <div class="flex justify-center">
-<img src=" {{escuela.portada}}" class="w-2/6 rounded-lg shadow-xl hover:shadow-inner animate__animated animate__backInUp animate__delay-2s" alt="">
+<img src="{{escuela.portada}}" class="w-2/6 rounded-lg shadow-xl hover:shadow-inner animate__animated animate__backInUp animate__delay-2s" alt="">
 </div>
 <div class="mx-20 text-justify mt-10 animate__animated animate__bounceInUp animate__delay-3s">
 <p style="font-family: 'Courier New', Courier, monospace;">

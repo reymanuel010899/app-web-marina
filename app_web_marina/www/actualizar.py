@@ -1,5 +1,5 @@
 import frappe
-
+no_cache = 1
 @frappe.whitelist(allow_guest=True)
 def get_context(context):
     context.student = frappe.get_doc("Estudiantes", {"user": frappe.session.user}, ["user"])
