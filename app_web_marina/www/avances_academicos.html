@@ -8,8 +8,8 @@
     <h1 class="text-center text-3xl mb-6">{{student.carrera}} </h1>
 <!-- tabla -->
 
-<div class="flex justify-center" style="margin: 20px;">
-    <table class="border-collapse table-auto border border-slate-400 mb-3" style="width: 100%;">
+<div class="flex justify-center" style="margin: 40px; border-radius: 10px;">
+    <table class="border-collapse table-auto border border-slate-400 mb-3" style="width: 100%; border-radius: 10px;">
         <thead class="border border-slate-400 bg-blue-700 text-white">
           <tr>
             <th class="px-4">Semestre</th>
@@ -24,7 +24,7 @@
        
             {% for semestre in semestres %}
             <tr class="border-b">
-                <td class="pl-2 pt-3">Semestre {{semestre.semester}} </td>
+                <td class="pl-2 pt-3">Semestre {{semestre.semestre}} </td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -38,7 +38,7 @@
            {% for materia in semestr.materia_item %}
                 {% set mat = frappe.get_doc("Materias", materia.materia_name ) %}
                 <tr class="border-b bg-slate-100 hover:bg-slate-300">
-                <td class="text-center border-b border-slate-200">{{semestre.semester}} </td>  
+                <td class="text-center border-b border-slate-200">{{semestre.semestre}}</td>  
                 <td class="px-4"> {{materia.name}}</td>
                 <td class="px-4">{{materia.materia_name}} </td>
                 <td class="text-center">{{mat.credito}} </td>

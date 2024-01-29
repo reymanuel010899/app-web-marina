@@ -1,6 +1,6 @@
 import frappe
 
-
+no_cache = 1
 def get_context(context):
     try:
 
@@ -10,4 +10,4 @@ def get_context(context):
        frappe.local.flags.redirect_location = "login"
        raise frappe.Redirect
 
-    context.semestres = frappe.get_list("Semestre", filters = {"carrera": context.student.carrera}, fields=["semester","name"], order_by="semester ASC",  ignore_permissions = True)
+    context.semestres = frappe.get_list("Semestre", filters = {"carrera": context.student.carrera}, fields=["semester","name", "semestre"], order_by="semester ASC",  ignore_permissions = True)
