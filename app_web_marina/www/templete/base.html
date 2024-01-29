@@ -89,7 +89,7 @@
 </head>
 <body frappe-session-status="{{ 'logged-in' if frappe.session.user != 'Guest' else 'logged-out'}}" data-path="{{ path | e }}" {%- if template and template.endswith('.md') %} frappe-content-type="markdown" {%- endif %} class="{{ body_class or ''}}">
 	<div style="margin-top: 20px !important;" class="text-center mt-8 lg:mr-6 flex justify-center lg:justify-end">
-        <h1 class="text-2xl font-bold mt-3" style="margin-right: 39%; font-family: 'Courier New', Courier, monospace;">{{student.escuela}} </h1>
+        <h1 class="text-2xl font-bold mt-3" style="margin-left: 150px; font-family: 'Courier New', Courier, monospace;">{{student.escuela}} </h1>
         <button id="sidebarCollapse"
             style="background-color: rgb(30, 58, 138)" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
             type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example"
